@@ -1,1 +1,1 @@
-web: gunicorn shuffler.wsgi --
+web: gunicorn shuffler.wsgi
