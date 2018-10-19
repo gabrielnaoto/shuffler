@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'shuffler.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': config('DATABASE_URL', default='sqlite:///' + BASE_DIR.child('db.sqlite3'), cast=db_url)
+    'default': config('DATABASE_URL', default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'), cast=db_url)
 }
 
 
