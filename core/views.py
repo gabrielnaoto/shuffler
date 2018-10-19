@@ -32,6 +32,7 @@ class HomeView(TemplateView):
         group_a = a_students[0:a_half] + b_students[0:b_half]
         group_b = a_students[a_half:] + b_students[b_half:]
         if len(odds) == 2:
+            shuffle(odds)
             group_a.append(odds[0])
             group_b.append(odds[1])
         elif len(odds) == 1:
