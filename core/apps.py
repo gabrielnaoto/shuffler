@@ -54,6 +54,9 @@ class CoreConfig(AppConfig):
                     'Ryan Carlos Meneghelli;B',
                     'Thiago Samuel Stahnke;A']
 
-        for student in students:
-            partial = student.split(';')
-            Student.objects.get_or_create(name=partial[0], rank=partial[1])
+        try:
+            for student in students:
+                partial = student.split(';')
+                Student.objects.get_or_create(name=partial[0], rank=partial[1])
+        except:
+            print('Theres no database yet.')
