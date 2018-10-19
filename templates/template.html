@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,9 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
+            <img src="{% static 'img/udesc.jpg' %}" height="100"/>
+            <h2>Gerador de grupos</h2>
+            <p class="lead">Participação em pesquisa científica</p>
             {% block content %}
             {% endblock %}
         </div>
