@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h3 class="mb-3">Grupo A</h3>
+            <ul class="list-group">
+                {% for student in group_a %}
+                    <li class="list-group-item text-primary">{{ student.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col">
+            <h3 class="mb-3">Grupo B</h3>
+            <ul class="list-group">
+                {% for student in group_b %}
+                    <li class="list-group-item text-info">{{ student.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a class="btn btn-primary mt-3" href="{% url 'home' %}">Recomeçar</a>
+{% endblock %}
