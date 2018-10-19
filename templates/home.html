@@ -5,16 +5,18 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="students_id">Selecione os alunos presentes</label>
-            {% for student in students %}
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="{{ student.id }}"
-                           id="check{{ forloop.counter }}"
-                           name="student">
-                    <label class="form-check-label" for="check{{ forloop.counter }}">
-                        {{ student.name }}
-                    </label>
-                </div>
-            {% endfor %}
+            <div style="column-count: 2;">
+                {% for student in students %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{ student.id }}"
+                               id="check{{ forloop.counter }}"
+                               name="student">
+                        <label class="form-check-label" for="check{{ forloop.counter }}">
+                            {{ student.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
             <small id="help_text" class="form-text text-muted">
                 Os alunos selecionados serão embaralhados e divididos em dois grupos.
             </small>
